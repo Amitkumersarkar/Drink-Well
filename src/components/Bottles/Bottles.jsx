@@ -1,5 +1,6 @@
 import { useEffect } from "react";
 import { useState } from "react";
+import Bottle from "../Bottle/Bottle";
 
 const Bottles = () => {
     // step-1: to hold data declared an state
@@ -18,8 +19,10 @@ const Bottles = () => {
             <h2>Water Bottles Here : {bottles.length} </h2>
 
             {/*state data looping  here */}
+            {/* send data to the bottle components */}
             {
-
+                bottles.map(bottle =>
+                    <Bottle key={bottle.id} bottle={bottle}> </Bottle>)
             }
         </div>
     );
