@@ -9,12 +9,14 @@ const Bottles = () => {
     useEffect(() => {
         // for local data
         fetch('bottles.json')
-            .then(res => res.json)
+            .then(res => res.json())
             .then(data => setBottles(data))
     }, [])
     return (
         <div>
-            <h2>Water Bottles Here </h2>
+            {/*dynamic for showing data item */}
+            <h2>Water Bottles Here : {bottles.length} </h2>
+
         </div>
     );
 };
