@@ -7,6 +7,9 @@ import './bottles.css';
 const Bottles = () => {
     // step-1: to hold data declared an state
     const [bottles, setBottles] = useState([]);
+    // declare an new state
+    const [cart, setCart] = useState([]);
+
 
     // step-2: to load data declare an useEffect
     useEffect(() => {
@@ -18,14 +21,18 @@ const Bottles = () => {
 
     // adding eventHandler here
     const handleAddToCart = bottle => {
-        console.log(bottle);
+        // console.log(bottle);
+        // create an new copy to push something new
+        const newCart = [...cart, bottle];
+        setCart(newCart);
+
     }
 
     return (
         <div>
             {/*dynamic for showing data item */}
-            <h2>Water Bottles Here : {bottles.length} </h2>
-
+            <h2>Water Bottles Available Here : {bottles.length} </h2>
+            <h4>Cart : {cart.length}</h4>
             {/*state data looping  here */}
             {/* send data to the bottle components */}
             <div className="bottle-container">
