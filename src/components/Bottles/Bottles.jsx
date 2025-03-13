@@ -17,6 +17,10 @@ const Bottles = () => {
             {/*dynamic for showing data item */}
             <h2>Water Bottles Here : {bottles.length} </h2>
 
+            {/*state data looping  here */}
+            {
+
+            }
         </div>
     );
 };
