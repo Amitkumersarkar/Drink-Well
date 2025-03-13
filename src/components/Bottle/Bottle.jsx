@@ -1,6 +1,6 @@
 // declare an props as a parameter
 const Bottle = ({ bottle, handleAddToCart }) => {
-    // console.log(bottle);
+    console.log(bottle);
     // destructuring from bottle
     const { name, img, price, } = bottle;
     return (

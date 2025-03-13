@@ -21,7 +21,7 @@ const Bottles = () => {
 
     // adding eventHandler here
     const handleAddToCart = bottle => {
-        // console.log(bottle);
+        console.log(bottle);
         // create an new copy to push something new
         const newCart = [...cart, bottle];
         setCart(newCart);
