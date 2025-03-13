@@ -18,10 +18,8 @@ const Bottles = () => {
 
     // adding eventHandler here
     const handleAddToCart = bottle => {
-        console.log('bottle going to added soon');
+        console.log(bottle);
     }
-
-
 
     return (
         <div>
@@ -33,9 +31,7 @@ const Bottles = () => {
             <div className="bottle-container">
                 {
                     bottles.map(bottle =>
-                        <Bottle key={bottle.id} bottle={bottle}>
-                            handleAddToCart={handleAddToCart}
-                        </Bottle>)
+                        <Bottle key={bottle.id} bottle={bottle} handleAddToCart={handleAddToCart}> </Bottle>)
                 }
             </div>
         </div>
