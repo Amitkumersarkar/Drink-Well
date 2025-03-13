@@ -15,6 +15,14 @@ const Bottles = () => {
             .then(res => res.json())
             .then(data => setBottles(data))
     }, [])
+
+    // adding eventHandler here
+    const handleAddToCart = bottle => {
+        console.log('bottle going to added soon');
+    }
+
+
+
     return (
         <div>
             {/*dynamic for showing data item */}
@@ -25,7 +33,9 @@ const Bottles = () => {
             <div className="bottle-container">
                 {
                     bottles.map(bottle =>
-                        <Bottle key={bottle.id} bottle={bottle}> </Bottle>)
+                        <Bottle key={bottle.id} bottle={bottle}>
+                            handleAddToCart={handleAddToCart}
+                        </Bottle>)
                 }
             </div>
         </div>
