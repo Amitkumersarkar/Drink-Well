@@ -22,8 +22,11 @@ const Bottles = () => {
 
     // load cart from local storage
     useEffect(() => {
+        // dependency injection
+        console.log('called the useEffect'); //bottles.length);
         const storedCart = getStoredCart();
         console.log(storedCart);
+
     }, [])
 
     // adding eventHandler here
