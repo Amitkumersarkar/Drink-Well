@@ -3,6 +3,7 @@ import { useState } from "react";
 import Bottle from "../Bottle/Bottle";
 import '../Bottle/bottle.css';
 import './bottles.css';
+import { addToLS, getStoredCart } from "../../utilities/localstorage";
 
 const Bottles = () => {
     // step-1: to hold data declared an state
@@ -19,12 +20,19 @@ const Bottles = () => {
             .then(data => setBottles(data))
     }, [])
 
+    // load cart from local storage
+    useEffect(() => {
+        const storedCart = getStoredCart();
+        console.log(storedCart);
+    }, [])
+
     // adding eventHandler here
     const handleAddToCart = bottle => {
-        console.log(bottle);
+        // console.log(bottle);
         // create an new copy to push something new
         const newCart = [...cart, bottle];
         setCart(newCart);
+        addToLS(bottle.id);
 
     }
 
